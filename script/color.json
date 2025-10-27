@@ -1,0 +1,13 @@
+{
+  "objs": [
+    { "rgb": [220, 30, 30],   "hex": "#dc1e1e", "note": "Red" },
+    { "rgb": [255, 140, 0],   "hex": "#ff8c00", "note": "Orange" },
+    { "rgb": [255, 220, 0],   "hex": "#ffdc00", "note": "Yellow" },
+    { "rgb": [30, 180, 30],   "hex": "#1eb41e", "note": "Green" }
+  ],
+  "loca": [
+    { "rgb": [30, 80, 220],   "hex": "#1e50dc", "note": "Blue" },
+    { "rgb": [140, 30, 220],  "hex": "#8c1edc", "note": "Purple" },
+    { "rgb": [0, 190, 190],   "hex": "#00bebe", "note": "Cyan" }
+  ]
+}

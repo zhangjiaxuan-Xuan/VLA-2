@@ -1,0 +1,78 @@
+{
+  "info1": {
+    "prompt": "moutai",
+    "aim": "wine bottle",
+    "got": "wine bottle",
+    "ok": true,
+    "keywords": [
+      "white-bottle",
+      "red-labeling",
+      "rectangular-box",
+      "kweichow-brand",
+      "alcoholic-beverage"
+    ],
+    "has_comimage": true,
+    "num_boxes": 2,
+    "timings": {
+      "search": 0.6331442389637232,
+      "replace": 17.65628275182098
+    }
+  },
+  "info2": {
+    "prompt": "blue white porcelain bowl",
+    "aim": "black bowl",
+    "got": "black bowl",
+    "ok": true,
+    "keywords": [
+      "blue-decorated",
+      "white-porcelain",
+      "bowl-shape",
+      "ornate-decoration",
+      "traditional-container"
+    ],
+    "has_comimage": true,
+    "num_boxes": 3,
+    "timings": {
+      "search": 1.100582734681666,
+      "replace": 30.23890650086105
+    }
+  },
+  "info3": {
+    "prompt": "butter",
+    "aim": "None",
+    "got": null,
+    "ok": true,
+    "keywords": [
+      "yellow-colored",
+      "semisolid",
+      "creamy-texture",
+      "rectangular-shape",
+      "salted"
+    ],
+    "has_comimage": true,
+    "num_boxes": 0,
+    "timings": {
+      "search": 0.6680378336459398,
+      "replace": 6.630920828320086
+    }
+  },
+  "info4": {
+    "prompt": "white cabinet",
+    "aim": "cabinet",
+    "got": "cabinet",
+    "ok": true,
+    "keywords": [
+      "rectangular",
+      "storage-cabinet",
+      "white",
+      "flat-topped",
+      "handle-equipped"
+    ],
+    "has_comimage": true,
+    "num_boxes": 1,
+    "timings": {
+      "search": 0.8381852265447378,
+      "replace": 14.891735531389713
+    }
+  }
+}

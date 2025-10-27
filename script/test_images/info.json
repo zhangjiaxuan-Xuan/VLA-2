@@ -1,0 +1,27 @@
+{
+    "image_path": "path/to/your/agentic-robot/script/test_images/main_000001.jpg",
+    "info1":{
+        "name":"moutai",
+        "bbox":[[120,64,136,105],[56,63,73,104]],
+        "score": [0.4,0.32],
+        "aim":"wine bottle"
+    },
+    "info2":{
+        "name":"blue white porcelain bowl",
+        "bbox":[[97,99,130,124],[92,100,128,125],[88,101,126,126]],
+        "score": [0.6,0.3,0.2],
+        "aim":"black bowl"
+    },
+    "info3":{
+        "name":"butter",
+        "bbox":[],
+        "score":[0],
+        "aim":"None"
+    },
+    "info4":{
+        "name":"white cabinet",
+        "bbox":[[145,79,229,189]],
+        "score": [0.7],
+        "aim":"cabinet"
+    }
+}
