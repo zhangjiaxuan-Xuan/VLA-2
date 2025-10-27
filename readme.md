@@ -20,8 +20,6 @@
 ```
 VLA-2/
 ├── experiments/                    # Main experimental codes
-│   ├── cache/                     # Logs, reports, cache files, images and testing data
-│   │   └── image_flow/           # Image processing workflow cache
 │   ├── robot/                    # Core VLA-2 implementation
 │   │   ├── openvla_utils.py      # OpenVLA utility functions
 │   │   ├── robot_utils.py        # Robot interaction utilities
@@ -95,6 +93,9 @@ The remaining code in the experiments folder is based on OpenVLA codebase
 ## 🎖️ Citation & References
 - **OpenVLA**: Open Vision-Language Agents (https://arxiv.org/abs/2304.09103)
 - **Agentic-Robot**: Referenced codebase (https://github.com/Agentic-Robot/agentic-robot)
+
+## 🚀 Deployment
+- coming soon
 
 ## 🔧 todo:
 - Updating, new features coming soon.
