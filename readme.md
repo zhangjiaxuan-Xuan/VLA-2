@@ -126,7 +126,7 @@ This project uses a dual conda environment setup to avoid library version confli
 ```bash
 # Create and activate client environment
 conda env create -f client.yml
-conda activate vla2_client
+conda activate client
 
 # Install video segmentation library
 git clone https://github.com/hkchengrex/Cutie
@@ -151,7 +151,7 @@ pip install flash-attn==2.5.5
 ```bash
 # Create and activate server environment
 conda env create -f server.yml
-conda activate vla2_server
+conda activate server
 
 # Install bulk image downloader
 pip install git+https://github.com/ostrolucky/Bulk-Bing-Image-downloader
