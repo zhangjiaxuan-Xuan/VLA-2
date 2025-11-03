@@ -3,18 +3,18 @@
 
     NOTES:
     starting steps:
-    1. zsh path/to/your/experiments/robot/libero_run/mps_start.sh
-    2. conda activate path/to/your/conda_env/ftdino
+    1. zsh path/to/your/experiments/robot/libero_run/mps_start.sh ## use mps service depend on your system, you may not need this step
+    2. conda activate path/to/your/conda_env/server
         export TRANSFORMERS_OFFLINE=1
         export HF_HUB_OFFLINE=1
         python path/to/your/experiments/robot/libero_run/vision_planner_service.py \
         --endpoint ipc:///tmp/vision_planner.sock --device cuda:0
     3. start this script
-        conda activate path/to/your/conda_env/openvla
+        conda activate path/to/your/conda_env/client
         python path/to/your/experiments/robot/libero_run/main_agent_clean.py
             --pretrained_checkpoint path/to/your/openvla/pretrained_checkpoint
             --task_suite_name libero_task_name
-    4. zsh path/to/your/experiments/robot/libero_run/mps_stop.sh
+    4. zsh path/to/your/experiments/robot/libero_run/mps_stop.sh ## use mps service depend on your system, you may not need this step
 """
 
 # ====== VisionPlannerClient (main process) ======

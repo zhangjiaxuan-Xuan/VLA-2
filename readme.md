@@ -1,9 +1,9 @@
 <div align="center">
 
-# VLA^2: Vision-Language-Action Agent
+# VLA<sup>2</sup>: Empowering Vision-Language-Action Models with an Agentic Framework for Unseen Concept Manipulation
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange.svg)](https://pytorch.org/)
+[![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.2&2.3-orange.svg)](https://pytorch.org/)
 [![VLA](https://img.shields.io/badge/VLA-Vision--Language--Action-green.svg)]()
 [![Agent](https://img.shields.io/badge/Agent-Robotics-red.svg)]()
 [![LIBERO](https://img.shields.io/badge/LIBERO-Environment-purple.svg)]()
@@ -14,6 +14,10 @@
 ## 📄 Paper & Resources
 - 📝 **Paper**: https://arxiv.org/abs/2510.14902
 - 🌐 **Project Page**: https://vla-2.github.io
+
+## 📣 News
+- 10.27.25 initial upload.
+- 11.03.25 update Deployment.
 
 ## 📁 Project Structure
 
@@ -90,12 +94,112 @@ The remaining code in the experiments folder is based on OpenVLA codebase
 - Comprehensive test scenarios covering different aspects of robot manipulation
 - Goal-oriented tasks, object manipulation, and spatial reasoning evaluations
 
-## 🎖️ Citation & References
-- **OpenVLA**: Open Vision-Language Agents (https://arxiv.org/abs/2304.09103)
-- **Agentic-Robot**: Referenced codebase (https://github.com/Agentic-Robot/agentic-robot)
+## 🚀 Installation & Deployment
 
-## 🚀 Deployment
-- coming soon
+### Overview
+This project uses a dual conda environment setup to avoid library version conflicts, particularly with transformers. We recommend using OpenVLA's recommended configuration for the main environment and our specified requirements for the server environment.
+
+### Prerequisites
+- **Anaconda/Miniconda**: Latest version
+- **Git**: For repository cloning
+- **NVIDIA Driver**: 550.54.14+
+- **CUDA**: Compatible with PyTorch 2.2/2.3
+
+### Environment Architecture
+
+#### Client Environment Dependencies
+- **OpenVLA**: [Core VLA framework](https://github.com/openvla/openvla)
+- **LIBERO_ZERO**: [Evaluation benchmark](https://github.com/zhangjiaxuan-Xuan/LIBERO_ZERO)
+- **Bulk-Bing-Image-downloader**: [Image downloading utility](https://github.com/ostrolucky/Bulk-Bing-Image-downloader)
+- **Cutie**: [Video object segmentation](https://github.com/hkchengrex/Cutie)
+
+#### Server Environment Dependencies
+- **MM-GroundingDINO**: [Grounding DINO integration](https://github.com/open-mmlab/mmdetection/tree/main/configs/mm_grounding_dino)
+- **SAM 2.1**: [Segment Anything Model](https://docs.ultralytics.com/models/sam-2/#interactive-segmentation)
+- **Qwen-VL**: [Vision-Language model](https://github.com/QwenLM/Qwen3-VL)
+- **GLM-4.1V**: [Thinking model](https://github.com/zai-org/GLM-V)
+
+### Installation Steps
+
+#### Step 1: Client Environment Setup
+
+```bash
+# Create and activate client environment
+conda env create -f client.yml
+conda activate vla2_client
+
+# Install video segmentation library
+git clone https://github.com/hkchengrex/Cutie
+cd Cutie && pip install -e .
+cd ..
+
+# Install robot learning benchmark
+git clone https://github.com/zhangjiaxuan-Xuan/LIBERO_ZERO 
+# Optional: cd LIBERO_ZERO && pip install -e .
+# Recommended: Import LIBERO_ZERO by absolute path
+
+# Install OpenVLA dependencies
+pip install dlimp@git+https://github.com/moojink/dlimp_openvla
+pip install thinplate@git+https://github.com/cheind/py-thin-plate-spline
+
+# Optional: Install Flash Attention for performance
+pip install flash-attn==2.5.5
+```
+
+#### Step 2: Server Environment Setup
+
+```bash
+# Create and activate server environment
+conda env create -f server.yml
+conda activate vla2_server
+
+# Install bulk image downloader
+pip install git+https://github.com/ostrolucky/Bulk-Bing-Image-downloader
+
+# Install latest transformers (includes tokenizers)
+pip install git+https://github.com/huggingface/transformers.git
+
+# Optional: Install Flash Attention for performance
+pip install flash-attn==2.6.1
+```
+
+#### Step 3: Model Configuration
+
+1. Download required model weights to local storage
+2. Update model paths in all files in experiments and scripts as needed
+3. Use validation scripts in `val_zsh/` folder for initial testing
+
+### Quick Start
+Enter the 'val_zsh' directory and run a test script, e.g.,
+
+```bash
+cd val_zsh
+zsh 0.sh
+``` 
+
+
+##   Citation
+if you find this project useful in your research, please consider citing:
+
+```bibtex
+@misc{zhaozhang2025vla2,
+  title={VLA²: Empowering Vision-Language-Action Models with an Agentic Framework for Unseen Concept Manipulation},
+  author={Han Zhao, Jiaxuan Zhang, Wenxuan Song, Pengxiang Ding, Donglin Wang},
+  eprint={2510.14902},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  year={2025}
+}
+```
+
+## 🎖️ References
+- **OpenVLA**: Open Vision-Language Agents (https://arxiv.org/abs/2304.09103, https://github.com/openvla/openvla)
+- **Agentic-Robot**: Referenced codebase (https://github.com/Agentic-Robot/agentic-robot)
+- **LIBERO**: Lifelong Robot Learning Benchmark (https://arxiv.org/abs/2307.01620)
+- **Qwen-VL**: Qwen Vision-Language Model (https://github.com/QwenLM/Qwen3-VL)
+- **MM-GroundingDINO**: Grounding DINO Model (https://github.com/open-mmlab/mmdetection/tree/main/configs/mm_grounding_dino)
+- **Segment Anything Model 2.1**: (https://docs.ultralytics.com/zh/models/sam-2/#interactive-segmentation)
+- **GLM-V**: GLM Vision-Language Model (https://github.com/zai-org/GLM-V)
 
 ## 🔧 todo:
 - Updating, new features coming soon.

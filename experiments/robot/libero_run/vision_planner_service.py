@@ -2,7 +2,7 @@
 
 """
 zsh:
-conda activate /root/miniconda3/envs/ftdino   
+conda activate /root/miniconda3/envs/server   
 python /zhaohan/ZJX/Agentic_VLA/code/agentic-robot/experiments/robot/libero_run/vision_planner_service.py \
   --endpoint ipc:///tmp/vision_planner.sock --device cuda:0 
   
@@ -196,10 +196,10 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--endpoint", type=str, default="ipc:///tmp/vision_planner.sock",
-                        help="ZeroMQ REP endpoint (ipc:// 或 tcp://)")
+                        help="ZeroMQ REP endpoint (ipc:// or tcp://)")
     parser.add_argument("--device", type=str, default="cuda:0")
     parser.add_argument("--qwen_model_id", type=str,
-                        default="/zhaohan/ZJX/Agentic_VLA/code/qwenft/LLaMA-Factory/result/merged")
+                        default="/path/to/your/qwen2.5VL model or verifier model",)
     args = parser.parse_args()
 
     print(f"[Service] Starting VisionPlannerService on {args.endpoint}")
@@ -225,10 +225,10 @@ def main():
             cmd = header.get("cmd")
 
             if cmd == "exit":
-                body, bin_out = {"ok": True, "msg": "服务已退出"}, []
+                body, bin_out = {"ok": True, "msg": "service stopped"}, []
                 resp = [json.dumps(body).encode("utf-8")]
                 sock.send_multipart(resp)
-                print("[Service] 收到退出命令，正在关闭...")
+                print("[Service] Stopping...")
                 sys.exit(0)
 
             t0 = time.time()
